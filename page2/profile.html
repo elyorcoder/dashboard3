@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/profile.css" />
+  </head>
+  <body>
+    <!-- <button class="logout log">log Out</button> -->
+    <div class="wrapper">
+      <div class="left">
+        <div class="top">
+          <h2 class="h2">Admin</h2>
+          <div class="wrap">
+            <p class="Home p">Home</p>
+            <p class="Products p">Products</p>
+            <p class="Users p">Users</p>
+            <p class="Settings p">Settings</p>
+            <p class="Help p">Help</p>
+          </div>
+        </div>
+        <button class="logout log">log Out</button>
+      </div>
+
+      <div class="right">
+        <nav class="nav">
+          <h2 class="name">Dashboard</h2>
+          <button class="addbtn">Add +</button>
+        </nav>
+
+
+
+        <div class="modal none">
+          <form class="form2">
+            <input class="inp" type="text" placeholder="title" name="title">
+            <input class="inp" type="number" placeholder="price" name="price">
+            <input class="inp" type="text" placeholder="description" name="description">
+            <input class="inp" type="text" placeholder="category" name="category">
+            <input class="inp" type="url" placeholder="image" name="image">
+            <div class="block">
+              <button class="btn Cancel">Cancel</button>
+              <button class="btn">Submit</button>
+            </div>
+          </form>
+        </div>
+
+
+
+        <div class="div">
+          <div class="mini-wrap">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>T/R</th>
+                  <th>title</th>
+                  <th>category</th>
+                  <th>description</th>
+                  <th>price</th>
+                  <th>Image</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody class="t-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./profile.js"></script>
+  </body>
+</html>

@@ -1,0 +1,233 @@
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-weight: 500;
+}
+.wrapper {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  background: rgb(12, 12, 12);
+}
+.log {
+  width: 50%;
+  margin: 0 auto;
+  height: 40px;
+  border-radius: 15px;
+  border: 2px solid rgb(138, 43, 226);
+  background-color: rgb(29, 25, 35);
+  color: rgb(138, 43, 226);
+  transition: all ease 0.2s;
+  &:hover {
+    color: rgb(12, 12, 12);
+    background-color: rgb(138, 43, 226);
+  }
+}
+.left {
+  background-color: rgb(29, 25, 35);
+  width: 15%;
+  height: min(100vh, 800px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 15px 0;
+}
+.top {
+  width: 100%;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.p {
+  color: rgb(138, 43, 226);
+  font-size: 1.5vw;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    background-color: rgb(44, 43, 50);
+  }
+}
+.h2 {
+  color: rgb(138, 43, 226);
+  font-size: 2vw;
+}
+.wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.right {
+  width: 85%;
+  position: relative;
+}
+.addbtn{
+  margin-right: 30px;
+  width: 70px;
+  height: 30px;
+  height: 40px;
+  border-radius: 15px;
+  border: 2px solid rgb(138, 43, 226);
+  background-color: rgb(0, 0, 0);
+  color: rgb(138, 43, 226);
+  transition: all ease 0.2s;
+  &:hover {
+    color: rgb(12, 12, 12);
+    background-color: rgb(138, 43, 226);
+  }
+}
+.nav {
+  width: 100%;
+  height: 70px;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.name {
+  color: rgb(138, 43, 226);
+  font-size: 25px;
+  margin-left: 30px;
+}
+.form2{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  min-width: 175px;
+  min-height: 350px;
+  background-color: #111;
+  padding: 25px 50px;
+  border-radius: 10px;
+}
+.modal{
+  background: rgba(255,255,255,0.3);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+}
+.inp{
+  color: rgb(138, 43, 226);
+  border: 2px solid rgb(138, 43, 226);
+  background-color: #000;
+  border-radius: 8px;
+  padding: 8px 0px 8px 8px;
+}
+.none{
+  display: none;
+}
+.block{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.btn{
+  width: 40%;
+  padding: 8px;
+  border-radius: 8px;
+  border: 2px solid rgb(138, 43, 226);
+  background-color: rgb(0, 0, 0);
+  color: rgb(138, 43, 226);
+  transition: all ease 0.2s;
+  &:hover {
+    color: rgb(12, 12, 12);
+    background-color: rgb(138, 43, 226);
+  }
+}
+.div{
+  width: 100%;
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mini-wrap {
+  height: 85vh;
+  overflow: auto;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  border-radius: 12px;
+}
+.table {
+  width: 85%;
+  border-collapse: collapse;
+  background: #000;
+  color: rgb(138, 43, 226);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.table thead {
+  background: #111;
+}
+.table th{
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid rgb(138, 43, 226);
+}
+.table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid rgb(138, 43, 226);
+}
+
+.table th {
+  font-weight: 700;
+}
+
+.table tbody tr:hover {
+  background: rgba(138, 43, 226, 0.1);
+}
+.view{
+  width: 80%;
+  background-color: rgb(4, 255, 0);
+  border: none;
+  border-radius: 5px;
+  padding: 3px 4px ;
+  transition: all 0.2s ease;
+  
+  &:hover{
+    transform: translate(0,-5px);
+  }
+}
+.edit{
+  width: 80%;
+  background-color: yellow;
+  border: none;
+  border-radius: 5px;
+  padding: 3px 4px ;
+  transition: all 0.2s ease;
+  margin-top: 5px;
+  &:hover{
+    transform: translate(0,-5px);
+  }
+}
+.delete{
+  width: 80%;
+  background-color: red;
+  border: none;
+  border-radius: 5px;
+  padding: 3px 5px;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  &:hover{
+    transform: translate(0,-5px);
+  }
+}
