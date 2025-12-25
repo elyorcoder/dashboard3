@@ -1,3 +1,10 @@
+let idedit;
+let tit;
+let pri;
+let des;
+let cat;
+let img;
+const Confirm = document.querySelector(".Confirm");
 const logout = document.querySelector(".logout");
 const Logout = () => {
   localStorage.removeItem("token");
@@ -21,14 +28,15 @@ function innerData(product) {
         <td>${description}</td>
         <td>${price}$</td>
         <td>
-          <img width ="100" heigh ="100" src="${image}" alt="${title}">
+          <img width ="70" heigh ="70" src="${image}" alt="${title}">
         </td>
         <td>
           <button class="view">view</button>
-          <button class="edit">edit</button>
+          <button onclick = "editpro(${id})"  class="edit">edit</button>
           <button onclick = "deletePoduct(${id})" class="delete">delete</button>
         </td>
       </tr>`;
+    unic(title, price, category, description, image);
   });
 }
 
@@ -98,6 +106,7 @@ form.addEventListener("submit", (e) => {
           <button class="delete">delete</button>
         </td>
       </tr>`;
+      alert("successful added");
       console.log(data);
     });
   // title.innerHTML = "";
@@ -107,3 +116,60 @@ form.addEventListener("submit", (e) => {
   // img.innerHTML = "";
   modal.classList.toggle("none");
 });
+
+function unic(title, price, category, description, image) {
+  tit = title;
+  pri = price;
+  des = category;
+  cat = description;
+  img = image;
+}
+
+const edit = document.querySelector(".Edit");
+const editform = document.querySelector(".formEdit");
+function editpro(id) {
+  // unic()
+  edit.classList.toggle("none");
+
+  // let t = editform["title"];
+  // let p = editform["price"];
+  // let d = editform["description"];
+  // let c = editform["category"];
+  // let i = editform["image"];
+  // t.value.innerHTML = `${tit}`;
+  // p.value.innerHTML = `${pri}`;
+  // d.value.innerHTML = `${des}`;
+  // c.value.innerHTML = `${cat}`;
+  // i.value.innerHTML = `${img}`;
+
+  idedit = id;
+}
+editform.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const title = editform["title"].value.trim();
+  const price = editform["price"].value.trim();
+  const des = editform["description"].value.trim();
+  const category = editform["category"].value.trim();
+  const img = editform["image"].value.trim();
+
+  const pro = {
+    title,
+    img,
+    price,
+    des,
+    category,
+  };
+  fetch(`https://fakestoreapi.com/products/${idedit}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(pro),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      edit.classList.toggle("none");
+      alert("successful edited")
+    });
+});
+
+
