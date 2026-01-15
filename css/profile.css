@@ -15,6 +15,118 @@
   background: rgb(12, 12, 12);
 }
 
+.card-wrapper {
+  position: absolute;
+  top: 0px;
+  background: rgba(211, 211, 211, 0.3);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  margin: auto;
+  width: 160px;
+}
+
+.card {
+  width: 400px;
+  height: 530px;
+  padding: 40px;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #111;
+  border-radius: 20px;
+  border: 3px solid rgb(138, 43, 226);
+}
+
+.userh {
+  color: rgb(138, 43, 226);
+  text-align: left;
+  margin-top: 10px;
+}
+
+.userp {
+  color: rgb(138, 43, 226);
+  text-align: left;
+  margin-top: 10px;
+}
+
+.line {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding-left: 40px;
+  background-color: #111;
+}
+
+.big {
+  width: 90%;
+  margin: 50px auto 0;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.mini-big {
+  border: 3px solid rgb(138, 43, 226);
+  border-radius: 15px;
+  height: 300px;
+  width: 200px;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  color: rgb(138, 43, 226);
+  padding: 30px;
+  gap: 15px;
+}
+
+.select {
+  width: 120px;
+  height: 30px;
+  border-radius: 10px;
+  padding: 3px;
+  background-color: #000;
+  color: rgb(138, 43, 226);
+  border: 2px solid rgb(138, 43, 226);
+}
+
+.user {
+  margin: 10px 0;
+  width: 100%;
+  height: 130px;
+  background-color: #111;
+  border: 5px solid rgb(138, 43, 226);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.Cancel {
+  padding: 7px 10px;
+  border-radius: 10px;
+  border: 3px solid rgb(138, 43, 226);
+  background-color: #111;
+  color: rgb(138, 43, 226);
+  transition: all ease 0.2s;
+}
+.Cancel:hover {
+  color: rgb(12, 12, 12);
+  background-color: rgb(138, 43, 226);
+}
+
 .log {
   width: 50%;
   margin: 0 auto;
@@ -57,6 +169,7 @@
   height: 40px;
   display: flex;
   justify-content: center;
+  text-decoration: none;
   align-items: center;
 }
 .p:hover {
@@ -200,6 +313,7 @@
 }
 
 .mini-wrap {
+  width: 85%;
   height: 85vh;
   overflow: auto;
   padding: 15px;
@@ -209,7 +323,7 @@
 }
 
 .table {
-  width: 85%;
+  width: 100%;
   border-collapse: collapse;
   background: #000;
   color: rgb(138, 43, 226);
@@ -242,42 +356,57 @@
 }
 
 .view {
-  width: 80%;
-  background-color: rgb(4, 255, 0);
-  border: none;
-  border-radius: 5px;
+  width: 85%;
+  border-radius: 8px;
   padding: 3px 4px;
   transition: all 0.2s ease;
+  border: 2px solid rgb(138, 43, 226);
+  background-color: rgb(0, 0, 0);
+  color: rgb(138, 43, 226);
 }
 .view:hover {
   transform: translate(0, -5px);
+  color: rgb(12, 12, 12);
+  background-color: rgb(138, 43, 226);
 }
 
 .edit {
-  width: 80%;
-  background-color: yellow;
-  border: none;
-  border-radius: 5px;
+  width: 85%;
+  margin-top: 10px;
+  border-radius: 8px;
   padding: 3px 4px;
   transition: all 0.2s ease;
-  margin-top: 5px;
+  border: 2px solid rgb(138, 43, 226);
+  background-color: rgb(0, 0, 0);
+  color: rgb(138, 43, 226);
 }
 .edit:hover {
   transform: translate(0, -5px);
+  color: rgb(12, 12, 12);
+  background-color: rgb(138, 43, 226);
+}
+
+.active {
+  background-color: rgb(50, 9, 107);
+  color: white;
+  font-weight: 500;
 }
 
 .delete {
-  width: 80%;
-  background-color: red;
-  border: none;
-  border-radius: 5px;
-  padding: 3px 5px;
-  margin-top: 5px;
+  width: 85%;
+  margin-top: 10px;
+  border-radius: 8px;
+  padding: 3px 4px;
+  transition: all 0.2s ease;
+  border: 2px solid rgb(138, 43, 226);
+  background-color: rgb(0, 0, 0);
+  color: rgb(138, 43, 226);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s ease;
 }
 .delete:hover {
   transform: translate(0, -5px);
+  color: rgb(12, 12, 12);
+  background-color: rgb(138, 43, 226);
 }/*# sourceMappingURL=profile.css.map */

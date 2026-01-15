@@ -8,21 +8,37 @@ const handleSubmit = (e) => {
     username,
     password,
   };
-  fetch(api, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(user),
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      const token = data.token;
 
+  // fetch(api, {
+  //   method: "POST",
+  //   headers: { "Content-Type": "application/json" },
+  //   body: JSON.stringify(user),
+  // })
+  //   .then((res) => res.json())
+  //   .then((data) => {
+  //     const token = data.token;
+
+  //     if (token) {
+  //       localStorage.setItem("token", token);
+  //       alert("You are in a good way!");
+  //       window.location.href = "../page2/profile.html";
+  //     }
+  //   });
+
+  try {
+    const getData = async (api, user) => {
+      const request = await axios.post(api, user);
+      const token = request.data.token;
+      console.log(token);
       if (token) {
         localStorage.setItem("token", token);
         alert("You are in a good way!");
         window.location.href = "../page2/profile.html";
       }
-    });
-  console.log(username, password);
+    };
+    getData(api, user);
+  } catch (error) {
+    console.log(error);
+  }
 };
 form.addEventListener("submit", handleSubmit);

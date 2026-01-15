@@ -13,11 +13,11 @@
         <div class="top">
           <h2 class="h2">Admin</h2>
           <div class="wrap">
-            <p class="Home p">Home</p>
-            <p class="Products p">Products</p>
-            <p class="Users p">Users</p>
-            <p class="Settings p">Settings</p>
-            <p class="Help p">Help</p>
+            <a href="./profile.html" class="Home p">Home</a>
+            <a href="./cards/cards.html" class="cards p">Cards</a>
+            <a href="./countries/countries.html" class="countries p"
+              >Countries</a
+            >
           </div>
         </div>
         <button class="logout log">log Out</button>
@@ -29,15 +29,23 @@
           <button class="addbtn">Add +</button>
         </nav>
 
-
-
         <div class="modal none">
           <form class="form2">
-            <input class="inp" type="text" placeholder="title" name="title">
-            <input class="inp" type="number" placeholder="price" name="price">
-            <input class="inp" type="text" placeholder="description" name="description">
-            <input class="inp" type="text" placeholder="category" name="category">
-            <input class="inp" type="url" placeholder="image" name="image">
+            <input class="inp" type="text" placeholder="title" name="title" />
+            <input class="inp" type="number" placeholder="price" name="price" />
+            <input
+              class="inp"
+              type="text"
+              placeholder="description"
+              name="description"
+            />
+            <input
+              class="inp"
+              type="text"
+              placeholder="category"
+              name="category"
+            />
+            <input class="inp" type="url" placeholder="image" name="image" />
             <div class="block">
               <button class="btn Cancel">Cancel</button>
               <button class="btn">Submit</button>
@@ -45,14 +53,23 @@
           </form>
         </div>
 
-
         <div class="Edit none">
           <form class="formEdit">
-            <input class="inp" type="text" placeholder="title" name="title">
-            <input class="inp" type="number" placeholder="price" name="price">
-            <input class="inp" type="text" placeholder="description" name="description">
-            <input class="inp" type="text" placeholder="category" name="category">
-            <input class="inp" type="url" placeholder="image" name="image">
+            <input class="inp" type="text" placeholder="title" name="title" />
+            <input class="inp" type="number" placeholder="price" name="price" />
+            <input
+              class="inp"
+              type="text"
+              placeholder="description"
+              name="description"
+            />
+            <input
+              class="inp"
+              type="text"
+              placeholder="category"
+              name="category"
+            />
+            <input class="inp" type="url" placeholder="image" name="image" />
             <div class="block">
               <button class="btn Cancel">Cancel</button>
               <button class="btn Confirm">Confirm</button>
@@ -79,6 +96,7 @@
         </div>
       </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <script src="./profile.js"></script>
   </body>

@@ -6,6 +6,23 @@ let cat;
 let img;
 const Confirm = document.querySelector(".Confirm");
 const logout = document.querySelector(".logout");
+const deletePoduct = async (id) => {
+  const thing = await axios.delete(`https://fakestoreapi.com/products/${id}`);
+  if (thing.data) {
+    alert(`you successful deleted item ${id}`);
+  }
+  console.log(thing.data);
+  // fetch(`https://fakestoreapi.com/products/${id}`, {
+  //   method: "DELETE",
+  // })
+  //   .then((res) => res.json())
+  //   .then((data) => {
+  //     if (data) {
+  //       alert(`you successful deleted item ${id}`);
+  //     }
+  //     console.log(data);
+  //   });
+};
 const Logout = () => {
   localStorage.removeItem("token");
   window.location.href = "../index.html";
@@ -13,11 +30,21 @@ const Logout = () => {
 logout.addEventListener("click", Logout);
 const api = "https://fakestoreapi.com/products";
 const tBody = document.querySelector(".t-body");
-fetch(api)
-  .then((res) => res.json())
-  .then((product) => {
-    innerData(product);
-  });
+// fetch(api)
+//   .then((res) => res.json())
+//   .then((product) => {
+//     innerData(product);
+//   });
+try {
+  const Data = async (api) => {
+    const request = await axios.get(api);
+    innerData(request.data);
+  };
+  Data(api);
+} catch (error) {
+  console.log(error);
+}
+
 function innerData(product) {
   product.map(({ id, title, price, description, category, image }, index) => {
     tBody.innerHTML += `
@@ -38,21 +65,6 @@ function innerData(product) {
       </tr>`;
     unic(title, price, category, description, image);
   });
-}
-
-//delete
-
-function deletePoduct(id) {
-  fetch(`https://fakestoreapi.com/products/${id}`, {
-    method: "DELETE",
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      if (data) {
-        alert(`you successful deleted item ${id}`);
-      }
-      console.log(data);
-    });
 }
 const addproduct = document.querySelector(".addbtn");
 const form = document.querySelector(".form2");
@@ -83,13 +95,9 @@ form.addEventListener("submit", (e) => {
     category,
     img,
   };
-  fetch(api, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(product),
-  })
-    .then((res) => res.json())
-    .then((data) => {
+  try {
+    const axi = async (api) => {
+      const one = await axios.post(api);
       tBody.innerHTML += `
       <tr>
         <td>:)</td>
@@ -107,13 +115,37 @@ form.addEventListener("submit", (e) => {
         </td>
       </tr>`;
       alert("successful added");
-      console.log(data);
-    });
-  // title.innerHTML = "";
-  // category.innerHTML = "";
-  // des.innerHTML = "";
-  // price.innerHTML = "";
-  // img.innerHTML = "";
+    };
+    axi(api);
+    // fetch(api, {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify(product),
+    // })
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //   tBody.innerHTML += `
+    // <tr>
+    //   <td>:)</td>
+    //   <td>${title}</td>
+    //   <td>${category}</td>
+    //   <td>${des}</td>
+    //   <td>${price}$</td>
+    //   <td>
+    //     <img width ="100" heigh ="100" src="${img}" alt="${title}">
+    //   </td>
+    //   <td>
+    //     <button class="view">view</button>
+    //     <button class="edit">edit</button>
+    //     <button class="delete">delete</button>
+    //   </td>
+    // </tr>`;
+    //   alert("successful added");
+    //   console.log(data);
+    //   });
+  } catch (error) {
+    console.log(error);
+  }
   modal.classList.toggle("none");
 });
 
@@ -159,17 +191,39 @@ editform.addEventListener("submit", (e) => {
     des,
     category,
   };
-  fetch(`https://fakestoreapi.com/products/${idedit}`, {
-    method: "PUT",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(pro),
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      console.log(data);
+  try {
+    const ed = async (api) => {
+      const bro = await axios.put(api);
+      console.log(bro.data);
       edit.classList.toggle("none");
-      alert("successful edited")
-    });
+      alert(`successful edited ${idedit}`);
+    };
+    ed(`https://fakestoreapi.com/products/${idedit}`);
+  } catch (error) {
+    console.log(error);
+  }
+  //   fetch(`https://fakestoreapi.com/products/${idedit}`, {
+  //     method: "PUT",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify(pro),
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       console.log(data);
+  //       edit.classList.toggle("none");
+  //       alert("successful edited");
+  //     });
 });
+const loca = window.location.href;
+const home = document.querySelector(".Home");
+const countries = document.querySelector(".countries");
+const card = document.querySelector(".cards");
+if (loca === "http://127.0.0.1:5500/page2/cards/cards.html") {
+  card.classList.add("active");
+} else if (loca === "http://127.0.0.1:5500/page2/profile.html") {
+  home.classList.add("active");
+} else if (loca === "http://127.0.0.1:5500/page2/countries/countries.html") {
+  countries.classList.add("active");
+}
 
-
+console.log(loca);

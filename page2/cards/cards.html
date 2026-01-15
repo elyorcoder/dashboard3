@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/profile.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="left">
+        <div class="top">
+          <h2 class="h2">Admin</h2>
+          <div class="wrap">
+            <a href="../profile.html" class="Home p">Home</a>
+            <a href="./cards.html" class="cards p">Cards</a>
+            <a href="../countries/countries.html" class="countries p">Countries</a>
+          </div>
+        </div>
+        <button class="logout log">log Out</button>
+      </div>
+
+      <div class="right">
+        <nav class="nav">
+          <h2 class="name">Dashboard</h2>
+        </nav>
+
+        <div class="div">
+          <div class="mini-wrap">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>T/R</th>
+                  <th>Date</th>
+                  <th>userId</th>
+                  <th>count</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody class="t-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-wrapper none">
+      <div class="card">
+        
+      </div>
+    </div>
+    <script src="./cards.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </body>
+</html>
